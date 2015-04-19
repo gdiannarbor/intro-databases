@@ -605,6 +605,32 @@
 				</section>
 
 				<section>
+					<h3>Recap from yesterday</h3>
+					<p>DML and DDL commands</p>
+					<p>Primary key and foreign keys</p>
+					<p>We will start with a few practice problems to reinforce the concepts</p>
+				</section>
+
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>Practice Problems:</p>
+					<ul>
+					<li>Return rows from the Department table where the Name includes the word 'Control' and where the DepartmentID is between 4 and 14</li>
+					<li>Create a new table that replicates the existing SalesPerson table in the AdventureWorks DB. Insert all the rows from the existing SalesPerson table into the new SalesPerson table</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>Practice Problems:</p>
+					<ul>
+					<li>Update the row in the Vendor table to change the name of the vendor to 'American Bikes in Boulder' where the AccountNumber is 'AMERICAN0002'</li>
+					<li>Update the vendor table to set the ActiveFlag to 0 where the VendorID is greater than 8 but less than or equal to 11</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>Unique Contraints</h3>
 					<p>Ensures that all data in a column is unique</p>
 					<p>Primary key constraints automatically have unique constraints defined</p>
@@ -650,6 +676,12 @@
 						<li>BirthDate int NOT NULL,</li>
 						<li>ModifiedDate datetime)</li>
 					</ul>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>Create a unique constraint on your second Activity table you created yesterday. Create the unique constraint on the ID column</p>
+					<p>Create a not null constraint on the Store table. The constraint should be on the Name column.</p>
 				</section>
 
 				<section>
@@ -711,6 +743,12 @@
 
 				<section>
 					<h3>Let's Develop It!</h3>
+					<p>Add a check constraint to the Students and the Activity table to check the StudentID and the ActivityID respectively, are greater than 0</p>
+					<p>Add a default constraint to the Students table and set the LastName column to default to 'Unknown'</p>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
 					<p>Create a table of your choice</p>
 					<p>Be cognizant of the datatypes you give you columns</p>
 					<p>Bonus: Add a primary key constraint to your table during creation!</p>
@@ -753,7 +791,7 @@
 					<p>Returns all sets of records in Table A and Table B</p>
 					<p>Records from both sides are included, where available.</p>
 					<p>If there is no matching record, the missing side will have a null value.</p>
-					<p>FUll outer joins are not supported in MySQL but you can emulate them by unioning a right and left join </p>
+					<p>Full outer joins are not supported in MySQL but you can emulate them by unioning a right and left join </p>
 				</section>
 
 				<section>
@@ -813,6 +851,15 @@
 				</section>
 
 				<section>
+					<h3>Let's Develop It!</h3>
+					<ul>
+					<li>Return a list of first names in the students table that have a match in the activity table (hint, use an inner join)</li>
+					<li>Return a list of first names and activity ids (from the activity table) using a left join from students to activity. Notice how some records that do not have a match in the activity table return NULL</li>
+					<li>Cross join the store table with the state province table.</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>Ordering Data</h3>
 					<p>Data from a SELECT statement can be ordered with the ORDER BY clause.</p>
 					<p>Default ordering is ascending</p>
@@ -844,8 +891,9 @@
 				<section>
 					<h3>Let's Develop It!</h3>
 					<ul>
-					<li>Get a count of the employeeID's and the loginID's and group the list by the ManagerID</li>
+					<li>Get a count of the employeeID's and the loginID's and group the list by the ManagerID (Employee table)</li>
 					<li>Order the results by ManagerID descending</li>
+					<li>Return a count of the department id and the group name, grouped by group name from the department table</li>
 					</ul>
 				</section>	
 
@@ -887,6 +935,8 @@
 					<li>Find the average unit price of sale orders (from the SalesOrderDetail table) when the unit price is greater than $200.00 
 						but less than $1000.00</li>
 					<li>Find the sum of sales orders (from the SalesOrderDetail table) where the order quantity is equal to 1</li>
+					<li>Return the Name and the length of the the Name column in the ProductCategory table</li>
+					<li>Return the total count of all rows in the ProductlistPriceHistory table</li>
 					</ul>
 				</section>	
 
@@ -924,6 +974,12 @@
 					<p>The effect of a transaction is that either all of the SQL statements in a transaction are committed to the database, or all of them are rolled back (no changes).</p>
 					<p>A transaction begins with the BEGIN TRANSACTION statement, followed by COMMIT or ROLLBACK.</p>
 					<p>Transactions are beyond the scope of this class, but good to learn if you are dealing with a group of changes that are "all or nothing".</p>
+				</section>
+
+				<section>
+					<h3>More Practice</h3>
+					<h4>SQL Zoo</h4>
+					<p>http://sqlzoo.net/wiki/SQL_Tutorial</p>
 				</section>
 		
 
