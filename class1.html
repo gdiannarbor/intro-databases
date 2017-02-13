@@ -161,7 +161,22 @@
         <section>
 					<h3>Open PostgreSQL Terminal</h3>
           <h4 class="green">Windows</h4>
+          <img src="images/windows-psql-menu.jpg" style="width: 30%" class="left img--bare"/>
+          <img src="images/windows-psql-terminal.png" style="width: 60%" class="pull-right img--bare"/>
 				</section>
+
+        <section>
+          <h3>Let's Develop It!</h3>
+          <p>Spend a few minutes to get familiar with psql.<p>
+            <br/>
+          <ul>
+            <li><strong>Open postgres</strong>: <code>psql</code>
+              <br/>
+            <li>List databases: <code>\l</code> or <code>\list</code></li>
+            <li>Help: <code>\h</code> or <code>\help</code></li>
+            <li>Command help: <code>\h SELECT</code> or <code>\help SELECT</code></li>
+          </ul>
+        </section>
 
         <section>
           <h3>Quit/Exit PostgreSQL</h3>
@@ -190,19 +205,6 @@
           <img src="images/pg-admin-add-server-1.png" style="width: 40%" class="left img--bare"/>
           <img src="images/pg-admin-add-server-2.png" style="width: 40%" class="pull-right img--bare"/>
         </section>
-
-        <section>
-					<h3>Let's Develop It!</h3>
-					<p>Spend a few minutes to get familiar with psql.<p>
-            <br/>
-					<ul>
-            <li><strong>Open postgres</strong>: <code>psql</code>
-              <br/>
-						<li>List databases: <code>\l</code> or <code>\list</code></li>
-						<li>Help: <code>\h</code> or <code>\help</code></li>
-            <li>Command help: <code>\h SELECT</code> or <code>\help SELECT</code></li>
-					</ul>
-				</section>
 
 				<section>
 				<h3>Relational Databases</h3>
@@ -323,8 +325,8 @@
 
 				<section>
 					<h3>The WHERE Clause</h3>
-					<p class="copy--small">Returns a subset of rows filtered on the WHERE clause criteria</p>
-					<p class="copy--small">SELECT .. WHERE statement can be made on one line:</p>
+					<p class="copy--small">Returns a subset of rows filtered on the <code>WHERE</code> clause criteria</p>
+					<p class="copy--small"><code>SELECT</code> .. <code>WHERE</code> statement can be made on one line:</p>
           <br/>
           <p class="copy--small left-align" style="padding-left: 20px"><span class="green"><em>Note:</em></span> PostgreSQL uses double-quotes to look for internal database object. Use single-quote to wrap string values.</p>
 					<pre><code contenteditable class="JavaScript">SELECT * FROM actor WHERE first_name = 'Bette';</code></pre>
