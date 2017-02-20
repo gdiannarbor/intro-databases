@@ -387,20 +387,14 @@
 
   				<section>
   					<h3>Left Join Example</h3>
-  					<p><pre><code contenteditable class="JavaScript">SELECT Customers.CustomerName, Orders.OrderID</p>
-  					<p>FROM Customers</p>
-  					<p>LEFT JOIN Orders</p>
-  					<p>ON Customers.CustomerID=Orders.CustomerID</p></code></pre></p>
-  					<p>Returns all the rows from the left table (Customers), even if there are no matches in the right table (Orders).</p>
-  				</section>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT column_name(s)
+              FROM table1
+              LEFT JOIN table2
+              ON table1.column_name = table2.column_name;
+            </code></pre></p>
 
-  				<section>
-  					<h3>Left Join Example</h3>
-  					<p><pre><code contenteditable class="JavaScript">SELECT C.Customerid, O.addressid</p>
-  					<p>FROM adventureworks.customer c</p>
-  					<p>LEFT JOIN adventureworks.customeraddress o</p>
-  					<p>on c.customerid = o.customerid</p></code></pre></p>
-  					<p>Returns all the rows from the left table (Customers), even if there are no matches in the right table (Customer Address).</p>
+  					<p>Returns all the rows from the left table (Customers), even if there are no matches in the right table (Orders).</p>
   				</section>
 
   				<section>
@@ -416,6 +410,16 @@
             <br/>
             <p><img src="images/rightjoin.png" class="img--bare"></p>
           </section>
+
+          <section>
+  					<h3>Right Join Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT column_name(s)
+              FROM table1
+              RIGHT JOIN table2
+              ON table1.column_name = table2.column_name;
+            </code></pre></p>
+  				</section>
 
   				<section>
   					<h3>Cross Join</h3>
