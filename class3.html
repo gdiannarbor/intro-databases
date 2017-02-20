@@ -82,11 +82,11 @@
           </section>
 
           <section>
-            <h3>Primary Key Contraints</h3>
+            <h3>Primary Key Constraints</h3>
             <ul>
               <li>Used as a unique indentifier for a row in a table</li>
-              <li>There is only one PK (Primary Key) contraint allowed on a table</li>
-              <li>Can have more than one unique contraints</li>
+              <li>There is only one PK (Primary Key) constraint allowed on a table</li>
+              <li>Can have more than one unique constraints</li>
               <li>PK's become FK's (Foreign Key) when creating relations among tables</li>
             </ul>
           </section>
@@ -111,7 +111,7 @@
           </section>
 
           <section>
-            <h3>Foreign Key Contraints</h3>
+            <h3>Foreign Key Constraints</h3>
             <ul style="width: 70%;">
               <li>Points to a PK in another table</li>
               <li>Enforces referential integrity</li>
@@ -177,7 +177,7 @@
   				</section>
 
   				<section>
-  					<h3>Unique Contraints</h3>
+  					<h3>Unique Constraints</h3>
             <ul>
               <li>Ensures that all data in a column is unique</li>
     					<li>Primary key constraints automatically have unique constraints defined</li>
@@ -186,7 +186,7 @@
   				</section>
 
   				<section>
-  					<h3>Unique Contraint Example</h3>
+  					<h3>Unique Constraint Example</h3>
   					<p>When creating a table: </p>
             <p><pre><code contenteditable class="JavaScript">
               CREATE TABLE IF NOT EXISTS website
@@ -199,7 +199,7 @@
   				</section>
 
   				<section>
-  					<h3>Unique Contraint Example</h3>
+  					<h3>Unique Constraint Example</h3>
   					<p>When altering a table: </p>
             <p><pre><code contenteditable class="JavaScript">
               ALTER TABLE website
@@ -208,7 +208,7 @@
   				</section>
 
   				<section>
-  					<h3>Not NULL Contraints</h3>
+  					<h3>Not NULL Constraints</h3>
   					<p>A column with this type of constraint cannot containt NULL values</p>
   				</section>
 
@@ -238,12 +238,12 @@
   				</section>
 
   				<section>
-  					<h3>Check Contraints</h3>
+  					<h3>Check Constraints</h3>
   					<p>Imposes a validation on the value being added or updated in a column</p>
   				</section>
 
   				<section>
-  					<h3>Check Contraint Example</h3>
+  					<h3>Check Constraint Example</h3>
   					<p>When creating a table: </p>
             <p><pre><code contenteditable class="JavaScript">
               CREATE TABLE IF NOT EXISTS orders
@@ -257,7 +257,7 @@
   				</section>
 
   				<section>
-  					<h3>Check Contraint Example</h3>
+  					<h3>Check Constraint Example</h3>
   					<p>When altering a table: </p>
             <p><pre><code contenteditable class="JavaScript">
               ALTER TABLE orders
@@ -266,7 +266,7 @@
   				</section>
 
   				<section>
-  					<h3>Default Contraints</h3>
+  					<h3>Default Constraints</h3>
             <ul>
               <li>Inserts the specified default value when no column value is provided</li>
     					<li>Inserts the specified default value when the inserted or updated value meets a certain criteria</li>
@@ -275,7 +275,7 @@
   				</section>
 
   				<section>
-  					<h3>Default Contraint Example</h3>
+  					<h3>Default Constraint Example</h3>
   					<p>When creating a table: </p>
             <p><pre><code contenteditable class="JavaScript">
               CREATE TABLE IF NOT EXISTS orders
@@ -289,7 +289,7 @@
   				</section>
 
   				<section>
-  					<h3>Default Contraint Example</h3>
+  					<h3>Default Constraint Example</h3>
   					<p>When altering a table: </p>
             <p><pre><code contenteditable class="JavaScript">
               ALTER TABLE orders
@@ -313,7 +313,7 @@
             <br/>
             <ul>
               <li>Be cognizant of the datatypes you give you columns</li>
-              <li>Try to add in some contraints and some defaults</li>
+              <li>Try to add in some constraints and some defaults</li>
             </ul>
   				</section>
         </section>
@@ -365,10 +365,32 @@
             </ul>
   				</section>
 
-  				<section>
-  					<h3>Full Outer Join</h3>
+          <section>
+            <h3>Full Outer Join</h3>
             <br/>
-  					<p><img src="images/fullouterjoin.png" class="img--bare"></p>
+            <p><img src="images/fullouterjoin.png" class="img--bare"></p>
+          </section>
+
+          <section>
+  					<h3>Full Outer Join Syntax</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT column_name(s)
+              FROM table1
+              FULL OUTER JOIN table2
+              ON table1.column_name = table2.column_name;
+            </code></pre></p>
+  				</section>
+
+          <section>
+  					<h3>Full Outer Join Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT f.description, l.name
+              FROM film as f
+              FULL OUTER JOIN language as l
+              ON f.language_id = l.language_id;
+            </code></pre></p>
+            <br/>
+  					<p>Returns all the rows from film and language using null in fields that don't have a matching value from the other table.</p>
   				</section>
 
   				<section>
@@ -386,15 +408,25 @@
           </section>
 
   				<section>
-  					<h3>Left Join Example</h3>
+  					<h3>Left Join Syntax</h3>
             <p><pre><code contenteditable class="JavaScript">
               SELECT column_name(s)
               FROM table1
               LEFT JOIN table2
               ON table1.column_name = table2.column_name;
             </code></pre></p>
+  				</section>
 
-  					<p>Returns all the rows from the left table (Customers), even if there are no matches in the right table (Orders).</p>
+          <section>
+  					<h3>Left Join Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT f.description, l.name
+              FROM language as l
+              LEFT JOIN film as f
+              ON f.language_id = l.language_id;
+            </code></pre></p>
+            <br/>
+            <p>Returns all the rows from the left table (film), even if there are no matches in the right table (language).</p>
   				</section>
 
   				<section>
@@ -412,13 +444,25 @@
           </section>
 
           <section>
-  					<h3>Right Join Example</h3>
+  					<h3>Right Join Syntax</h3>
             <p><pre><code contenteditable class="JavaScript">
               SELECT column_name(s)
               FROM table1
               RIGHT JOIN table2
               ON table1.column_name = table2.column_name;
             </code></pre></p>
+  				</section>
+
+          <section>
+  					<h3>Right Join Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT f.description, i.inventory_id
+              FROM inventory as i
+              RIGHT JOIN film as f
+              ON i.film_id = f.film_id;
+            </code></pre></p>
+            <br/>
+            <p>Returns all the rows from the right table (film), even if there are no matches in the left table (inventory).</p>
   				</section>
 
   				<section>
@@ -463,13 +507,12 @@
   				<section>
   					<h3>Let's Develop It!</h3>
   					<ul>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-  					<li>Return a list of first names in the students table that have a match in the activity table (hint, use an inner join)</li>
-  					<li>Return a list of first names and activity ids (from the activity table) using a left join from students to activity. Notice how some records that do not have a match in the activity table return NULL</li>
-  					<li>Cross join the store table with the state province table.</li>
+              <li>Build a query to create a list of films not in inventory.
+                <span class="copy--small"><em>Tip:</em> try a right or left join, and a where clause</span>
+              </li>
+              <li>Build a query to create a list of all film's descriptions and category name
+                <span class="copy--small"><em>Tip:</em> use multiple joins</span>
+              </li>
   					</ul>
   				</section>
         </section>
