@@ -33,19 +33,367 @@
           </div>
         </section>
 
+        <section>
+          <section>
+            <h3>Where we left off... </h3>
+            <ul class="box--small" style="width: 50%">
+              <li>Inner Joins</li>
+            </ul>
+          </section>
+
+  				<section>
+  					<h3>Let's Develop It!</h3>
+  					<p>Write a query, using an inner join, that returns the customer's first name, last name and the rental date for the customer who's <strong>customer_id</strong> is 37</p>
+  				</section>
+
+  				<section>
+  					<h3>Full Outer Join</h3>
+            <ul>
+    					<li>Returns all sets of records in Table A and Table B</li>
+    					<li>Records from both sides are included, where available.</li>
+    					<li>If there is no matching record, the missing side will have a null value.</li>
+            </ul>
+  				</section>
+
+          <section>
+            <h3>Full Outer Join</h3>
+            <br/>
+            <p><img src="images/fullouterjoin.png" class="img--bare"></p>
+          </section>
+
+          <section>
+  					<h3>Full Outer Join Syntax</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT column_name(s)
+              FROM table1
+              FULL OUTER JOIN table2
+              ON table1.column_name = table2.column_name;
+            </code></pre></p>
+  				</section>
+
+          <section>
+  					<h3>Full Outer Join Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT f.description, l.name
+              FROM film as f
+              FULL OUTER JOIN language as l
+              ON f.language_id = l.language_id;
+            </code></pre></p>
+            <br/>
+  					<p>Returns all the rows from film and language using null in fields that don't have a matching value from the other table.</p>
+  				</section>
+
+  				<section>
+  					<h3>Left Join</h3>
+            <ul>
+              <li>Produces all records from TableA, with matching records from TableB if they are available.</li>
+    					<li>If there is no matching record in TableB, the right side will have a null value.</li>
+            </ul>
+  				</section>
+
+          <section>
+            <h3>Left Join</h3>
+            <br/>
+            <p><img src="images/leftouterjoin.png" class="img--bare"></p>
+          </section>
+
+  				<section>
+  					<h3>Left Join Syntax</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT column_name(s)
+              FROM table1
+              LEFT JOIN table2
+              ON table1.column_name = table2.column_name;
+            </code></pre></p>
+  				</section>
+
+          <section>
+  					<h3>Left Join Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT f.description, l.name
+              FROM language as l
+              LEFT JOIN film as f
+              ON f.language_id = l.language_id;
+            </code></pre></p>
+            <br/>
+            <p>Returns all the rows from the left table (film), even if there are no matches in the right table (language).</p>
+  				</section>
+
+  				<section>
+  					<h3>Right Join</h3>
+            <ul>
+    					<li>Produces all records from the right table, with matching records from TableA if they are available.</li>
+    					<li>If there is no matching record in TableA, the left side will have a null value.</li>
+            </ul>
+  				</section>
+
+          <section>
+            <h3>Right Join</h3>
+            <br/>
+            <p><img src="images/rightjoin.png" class="img--bare"></p>
+          </section>
+
+          <section>
+  					<h3>Right Join Syntax</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT column_name(s)
+              FROM table1
+              RIGHT JOIN table2
+              ON table1.column_name = table2.column_name;
+            </code></pre></p>
+  				</section>
+
+          <section>
+  					<h3>Right Join Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT f.description, i.inventory_id
+              FROM inventory as i
+              RIGHT JOIN film as f
+              ON i.film_id = f.film_id;
+            </code></pre></p>
+            <br/>
+            <p>Returns all the rows from the right table (film), even if there are no matches in the left table (inventory).</p>
+  				</section>
+
+  				<section>
+  					<h3>Cross Join</h3>
+            <ul>
+              <li>Produces a result set which is the product of rows of two associated tables when no <code>WHERE</code> clause is used with <code>CROSS JOIN</code>.</li>
+    					<li>Multiplies the each row in the first table with each row in the second table.</li>
+    					<li>There are very few situations where this would be used.</li>
+            </ul>
+  				</section>
+
+          <section>
+            <h3>Cross Join</h3>
+            <br/>
+            <p><img src="images/crossjoin.png" class="img--bare"></p>
+          </section>
+
+  				<section>
+  					<h3>Cross Join Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              CREATE TABLE T1 (label CHAR(1) PRIMARY KEY);
+
+              CREATE TABLE T2 (score INT PRIMARY KEY);
+
+              INSERT INTO T1 (label)
+              VALUES
+               ('A'),
+               ('B');
+
+              INSERT INTO T2 (score)
+              VALUES
+               (1),
+               (2),
+               (3);
+
+              SELECT * FROM T1
+              CROSS JOIN T2;
+            </code></pre></p>
+  				</section>
+
+  				<section>
+  					<h3>Let's Develop It!</h3>
+  					<ul>
+              <li>Build a query to create a list of films not in inventory.
+                <span class="copy--small"><em>Tip:</em> try a right or left join, and a where clause</span>
+              </li>
+              <li>Build a query to create a list of all film's descriptions and category name
+                <span class="copy--small"><em>Tip:</em> use multiple joins</span>
+              </li>
+  					</ul>
+  				</section>
+        </section>
 
         <section>
           <section>
-              <h3>Questions?</h3>
+            <h3>Ordering Data</h3>
+            <ul>
+              <li>Data from a <code>SELECT</code> statement can be ordered with the <code>ORDER BY</code> clause</li>
+              <li>Default ordering is ascending</li>
+              <li>Can explicitly add <code>ASC</code> or <code>DESC</code></li>
+            </ul>
           </section>
 
           <section>
-            <h3>Continue Exploring!</h3>
-            <ul style="width: 50%">
-              <li></li>
-              <li></li>
+            <h3>ORDER BY Syntax</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT column1, column2
+              FROM tableA
+              ORDER BY column2
+            </code></pre></p>
+          </section>
+
+          <section>
+            <h3>ORDER BY Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT *
+              FROM actor
+              ORDER BY first_name DESC;
+            </code></pre></p>
+          </section>
+
+          <section>
+            <h3>GROUP BY</h3>
+            <ul>
+              <li>Data from a <code>SELECT</code> statement can be grouped with the <code>GROUP BY</code> clause</li>
+              <li>Can group by more than one column</li>
+              <li>Be aware of the order you group columns in</li>
             </ul>
           </section>
+
+          <section>
+            <h3>GROUP BY Syntax</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT column1, column2, column3
+              FROM tableA
+              GROUP BY column2
+            </code></pre></p>
+          </section>
+
+          <section>
+            <h3>GROUP BY Example</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT district
+              FROM address
+              GROUP BY district;
+            </code></pre></p>
+          </section>
+
+          <section>
+            <h3>Let's Develop It!</h3>
+            <ul>
+              <li>Get a list of all languages ordered alphabetically</li>
+              <li>Build a query that gets a list of all used rental durations
+                <span class="copy--small">(<em>Tip:</em> Try using GROUP BY)</span>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Functions in SQL</h3>
+            <ul>
+              <li>Built in database functions</li>
+              <li>Some will vary on database platform</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Aggregate Functions</h3>
+            <p>Used in conjunction with <code>GROUP BY</code></p>
+            <ul>
+              <li><code>count(*)</code></li>
+              <li><code>count(x)</code></li>
+              <li><code>sum(x)</code></li>
+              <li><code>avg(x)</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Aggregate Function Syntax</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT function(column2)
+              FROM tableA
+              GROUP BY column2;
+            </code></pre></p>
+          </section>
+
+          <section>
+            <h3>Core Functions</h3>
+            <ul>
+              <li><code>abs()</code></li>
+              <li><code>max()</code></li>
+              <li><code>min()</code></li>
+              <li><code>length()</code></li>
+              <li><code>ltrim()</code></li>
+              <li><code>rtrim()</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Core Function Syntax</h3>
+            <p><pre><code contenteditable class="JavaScript">
+              SELECT function(column2)
+              FROM tableA;
+            </code></pre></p>
+          </section>
+
+          <section>
+            <h3>Let's Develop It!</h3>
+            <ul>
+              <li>Find the average film length</li>
+              <li>Find the count of films you have for each category</li>
+              <li>Find the min payment, and max payment</li>
+              <li>Create a list of addresses with a phone length under 10 digits</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Let's Develop It!</h3>
+            <ul>
+              <li>Create a list of each staff member and the total amounts of payments each has processed</li>
+              <br/>
+              <li>Build a query to return the number of rentals you have for each film. Have it list the film's title and count of rentals each has had. </li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- <section>
+          <section>
+            <h3>Advanced Topics</h3>
+            <h4>Stored Procedures</h4>
+            <p>Are a sequence of instructions (SQL Statements) that perform a task and are stored in a single execution plan</p>
+            <p>Available to pplications that access relational database systems</p>
+            <p>Used for extensive and/or complex operations that involve multiple SQL statements</p>
+          </section>
+
+          <section>
+            <h3>Advanced Topics</h3>
+            <h4>Indexes</h4>
+            <p>Indexes reduces the number of database pages that have to be visited/scanned</p>
+            <p>Used to enhance query performance</p>
+            <p>Can be thought of as a pointer to data in a table (much like an index of a book)</p>
+            <p>Can only have one clustered index per table (determines the physical order of a table)</p>
+            <p>The clustered index is the table</p>
+            <p>Can have many non clustered indexes per table</p>
+          </section>
+
+          <section>
+            <h3>Advanced Topics</h3>
+            <h4>Triggers</h4>
+            <p>Triggers are database operations that are automatically performed when a specific event occurs in your database.</p>
+            <p>Among other things, triggers often used to insert records into log tables when changes are made to data.</p>
+            <p>Creating triggers is beyond the scope of this class, but know they exist.</p>
+          </section>
+
+          <section>
+            <h3>Advanced Topics</h3>
+            <h4>Transaction Level Operations</h4>
+            <p>A transaction is an atomic unit of database operations.</p>
+            <p>The effect of a transaction is that either all of the SQL statements in a transaction are committed to the database, or all of them are rolled back (no changes).</p>
+            <p>A transaction begins with the BEGIN TRANSACTION statement, followed by COMMIT or ROLLBACK.</p>
+            <p>Transactions are beyond the scope of this class, but good to learn if you are dealing with a group of changes that are "all or nothing".</p>
+          </section>
+        </section> -->
+
+        <section>
+          <h3>More Practice</h3>
+          <ul style="width: 50%">
+            <li><a href="https://www.codecademy.com/learn/learn-sql" target="_blank">Code Academy SQL</a></li>
+            <li><a href="http://sqlzoo.net/wiki/SQL_Tutorial" target="_blank">SQL Zoo</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Resources</h3>
+          <ul style="width: 50%">
+            <li><a href="http://www.tutorialspoint.com/postgresql/" target="_blank">Tutorials Point</a></li>
+            <li><a href="http://www.w3schools.com/sql/" target="_blank">W3 Schools Tutorials</a></li>
+          </ul>
+        </section>
 
           <section>
             <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
